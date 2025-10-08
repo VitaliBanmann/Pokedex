@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+body {
+    background-image: linear-gradient(315deg, #e71f05, #ef5350);
+    min-height: 100vh;
+}
+.header {
+    height: 75px;
+    width: 100%;
+    display: flex;
+    background-color: #ef5350;
+    padding: 10px;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    top: 5px;
+    left: 5px;
+}
+header h1 {
+    font-size: 30px;
+}
+.maxWidth {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+.flexDirection {
+    display: flex;
+    justify-content: space-between;
+}
+.flexHead {
+    display: flex;
+    justify-content: space-between;
+}
+.mainContainer {
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #ef5350;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.leftColumn {
+    flex: 1;
+    max-width: 85%;
+    padding-right: 20px;
+}
+.rightColumn {
+    flex: 1;
+    max-width: 15%;
+}
+.pokedex {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}

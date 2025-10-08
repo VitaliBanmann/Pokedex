@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/Favicon/Pokeball.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/card.css">
+    <link rel="stylesheet" href="./styles/controls.css">
+    <link rel="stylesheet" href="./styles/loading-spinner.css">
+    <link rel="stylesheet" href="./styles/modal.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/type.css">
+    <link rel="stylesheet" href="./styles/tab.css">
+    <title>Pokédex</title>
+</head>
+<body onload="init()">
+    <input type="checkbox" id="menuToggle" class="menu-toggle">
+    <label for="menuToggle" class="burger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <header class="header">
+        <div class="maxWidth flexHead">
+            <img src="./assets/Pokédex_AM_Artwork.webp" alt="Pokédex Logo" class="logo">
+            <h1>Pokédex</h1>
+        </div>
+    </header>
+    <section class="mainContainer">
+        <div class="maxWidth flexDirection">
+            <div class="leftColumn">
+                <div id="controls"></div>
+                <div id="searchContainer">
+                    <input type="text" id="search" placeholder="Suche nach Pokémon..." oninput="searchPokemon()">
+                </div>
+            </div>
+            <div class="rightColumn">
+                <div id="typeFilterContainer"></div>
+                <div id="filterResetContainer"></div>
+            </div>
+        </div>
+    </section>  
+    <section class="maxWidth"><div class="pokedex"></div></section>
+    <div id="loadingModal" class="modal">
+        <div class="modalContent loadingContent">
+            <div class="spinnerContainer">
+                <div class="pokeballSpinner">
+                    <div class="pokeballButton"></div>
+                </div>
+            </div>
+            <div class="loadingTextContainer">
+                <div class="loadingText">Pokémon werden gefangen...</div>
+            </div>
+        </div>
+    </div>
+    <div id="pokemonModal" class="modal" onclick="checkCloseModal(event)">
+        <div class="modalContent">
+            <span class="closeBtn" onclick="closeModal()">&times;</span>
+            <div class="modalNavigation">
+                <button class="navArrow leftArrow" onclick="navigatePokemon(-1)">
+                    <img src="./assets/arrow-left.svg" alt="Vorheriges Pokémon">
+                </button>
+                <h2 id="modalTitle"></h2>
+                <button class="navArrow rightArrow" onclick="navigatePokemon(1)">
+                    <img src="./assets/arrow-right.svg" alt="Nächstes Pokémon">
+                </button>
+            </div>
+            <div class="modalBody">
+                <div class="typesContainer" id="modalTypes"></div>
+                <div class="pokemonImageContainer">
+                    <div class="imageWrapper">
+                        <img id="modalImage" src="" alt="Pokémon Bild" class="modalImage">
+                    </div>
+                </div>
+                <div class="tabs">
+                    <button class="tabButton" onclick="openTab('statsTab')">Basiswerte</button>
+                    <button class="tabButton" onclick="openTab('abilitiesTab')">Fähigkeiten</button>
+                    <button class="tabButton" onclick="openTab('strengthsTab')">Typ-Effekte</button>
+                </div>
+                <div id="statsTab" class="tabContent">
+                    <div class="statsGrid">
+                        <div id="statsBars" class="statsColumn"></div>
+                        <div id="statsBars2" class="statsColumn"></div>
+                    </div>
+                    <div class="physicalDetails">
+                        <div class="detailItem">
+                            <span class="detailLabel">Gewicht</span>
+                            <span id="weightValue" class="detailValue"></span>
+                        </div>
+                        <div class="detailItem">
+                            <span class="detailLabel">Größe</span>
+                            <span id="heightValue" class="detailValue"></span>
+                        </div>
+                    </div>
+                </div>
+                <div id="abilitiesTab" class="tabContent">
+                    <div class="abilitiesDetailsContainer" id="detailedAbilities"></div>
+                </div>
+                <div id="strengthsTab" class="tabContent">
+                    <div class="strengthsWeaknessesContainer">
+                        <div class="strengthsSection">
+                            <h3>Stark gegen:</h3>
+                            <div id="strengthsInfo" class="typesGrid"></div>
+                        </div>
+                        <div class="weaknessesSection">
+                            <h3>Schwach gegen:</h3>
+                            <div id="weaknessesInfo" class="typesGrid"></div>
+                        </div>
+                        <div class="immunitiesSection">
+                            <h3>Immun gegen:</h3>
+                            <div id="immunitiesInfo" class="typesGrid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./scripts/template.js"></script>
+    <script src="./scripts/card.js"></script>
+    <script src="./scripts/controls.js"></script>
+    <script src="./scripts/modal.js"></script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/type.js"></script>  
+</body>
+</html>

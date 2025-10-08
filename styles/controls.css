@@ -1,0 +1,188 @@
+#controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 20px;
+}
+#controls button {
+    padding: 8px 12px;
+    background-color: #ef5350;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#controls button:hover {
+    background-color: #d32f2f;
+}
+#controls #counter {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    font-weight: bold;
+}
+.closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s;
+}
+.closeBtn:hover {
+    color: #000;
+}
+.navArrow {
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 10;
+}
+.navArrow:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+.navArrow svg {
+    width: 48px;
+    height: 48px;
+    fill: white;
+}
+#searchContainer {
+    margin-top: 15px;
+}
+#searchContainer input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    max-width: 500px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.generationButtons {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.generationButtons button {
+    min-height: 36px;
+    padding: 6px 12px;
+}
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.pagination-group {
+    display: flex;
+    gap: 10px;
+}
+.pagination-button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+.buttonContainer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+}
+#randomSpriteBtn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 6px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+#randomSpriteBtn:hover {
+    background-color: #45a049;
+}
+.menu-toggle {
+    display: none;
+}
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 30px;
+    height: 21px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.burger-menu span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+.genButton.activeGen {
+    background-color: #002fff;
+    color: #000;
+    font-weight: bold;
+    box-shadow: 0 0 20px #002fff;
+}
+.resetButton {
+    padding: 8px 16px;
+    margin-top: 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.resetButton:hover {
+    background-color: #d32f2f;
+}
+.navButton {
+    padding: 8px 16px;
+    margin: 0 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+.navButton:hover:not(:disabled) {
+    background-color: #45a049;
+}
+.navButton.disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+#counter {
+    margin-top: 5px;
+    font-weight: bold;
+}
